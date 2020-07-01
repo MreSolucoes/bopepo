@@ -3,23 +3,18 @@ package org.jrimum.bopepo.campolivre;
 import org.jrimum.domkee.financeiro.banco.febraban.Titulo;
 
 /**
- * <p>
- * Interface comum para todos os campos livres do Banco Uniprime que venham a
+ *<p>
+ * Interface comum para todos os campos livres do Banco uniprime que venham a
  * existir.
  * </p>
  * 
- * @author <a href="http://gilmatryx.googlepages.com/">Gilmar P.S.L</a>
- * 
- * @since 0.2
- * 
- * @version 0.2
  */
 abstract class AbstractCLUniprime extends AbstractCampoLivre {
 
 	/**
-	 * 
+	 * {@code serialVersionUID = -1733227746617862639L}
 	 */
-	private static final long serialVersionUID = 1882819688182515282L;
+	private static final long serialVersionUID = -1733227746617862639L;
 
 	/**
 	 * <p>Cria um campo livre com um determinado número de campos</p>
@@ -27,14 +22,16 @@ abstract class AbstractCLUniprime extends AbstractCampoLivre {
 	 * @see AbstractCampoLivre
 	 * 
 	 * @param fieldsLength - Número de campos
+	 * 
+	 * @since 0.2
 	 */
 	protected AbstractCLUniprime(Integer fieldsLength) {
 		
 		super(fieldsLength);
 	}
 
-	protected static CampoLivre create(Titulo titulo) {
+	protected static CampoLivre create(Titulo titulo){
 		
-		return new CLBancoUniprime(titulo);
+		return new CLUniprime().build(titulo);
 	}
 }
